@@ -6,17 +6,17 @@
  * found in the LICENSE file at the root of this project.
  */
 
+import {DOCUMENT} from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  Inject,
   Input,
   Renderer2,
   ViewChild,
 } from '@angular/core';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
-
-import * as DOMPurify from 'dompurify';
 
 import {NgxIFrameResizerDirective} from './ngx-gist-iframe-resizer.directive';
 
@@ -88,7 +88,11 @@ export class NgxGistComponent {
    */
   srcdoc?: SafeHtml;
 
-  constructor(private sanitizer: DomSanitizer, private renderer2: Renderer2) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private renderer2: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
   ngOnInit(): void {
     this.initializeIFrame();
@@ -98,13 +102,12 @@ export class NgxGistComponent {
     // Set unique id for iframe
     this.renderer2.setAttribute(this.iframe.nativeElement, 'id', `gist-${this.gistId}`);
 
-    const content = ``;
-    const sanitized = DOMPurify.sanitize(content, {FORBID_TAGS: ['script'], RETURN_DOM: true});
+    const template = this.document.createRange().createContextualFragment('');
+    this.renderer2.appendChild(template, this.createIframeResizerContentWindowScripts());
+    this.renderer2.appendChild(template, this.createGistScript());
+    const serializedHTML = new XMLSerializer().serializeToString(template);
 
-    this.renderer2.appendChild(sanitized, this.createIframeResizerContentWindowScripts());
-    this.renderer2.appendChild(sanitized, this.createGistScript());
-
-    this.srcdoc = this.sanitizer.bypassSecurityTrustHtml(sanitized.outerHTML);
+    this.srcdoc = this.sanitizer.bypassSecurityTrustHtml(serializedHTML);
 
     // Attach target="_blank" to links in iframe.
     // This is needed because the iframe prevents opening links in a new tab.
