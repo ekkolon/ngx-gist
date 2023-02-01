@@ -4,8 +4,7 @@
 [![NPM Version][npm-image]][npm-url]
 
 A small Angular library for embedding GitHub Gists in your Angular applications.
-
-The iframe in which the gist embed is rendered, will automatically adjust it's size based on the gist's inner content height.
+The iframe containing the gist embed will automatically adjust it's size based on the gist's inner content height.
 
 [npm-image]: https://img.shields.io/npm/v/@ekkolon/ngx-gist.svg
 [npm-url]: https://npmjs.org/package/@ekkolon/ngx-gist
