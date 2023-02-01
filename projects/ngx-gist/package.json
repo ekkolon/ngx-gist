@@ -24,7 +24,6 @@
   "peerDependencies": {
     "@angular/common": "^15.1.0",
     "@angular/core": "^15.1.0",
-    "dompurify": "^2.4.3",
     "iframe-resizer": "^4.3.3"
   },
   "dependencies": {
