@@ -13,6 +13,7 @@ import {
   ElementRef,
   Inject,
   Input,
+  NgZone,
   Renderer2,
   ViewChild,
 } from '@angular/core';
@@ -91,11 +92,15 @@ export class NgxGistComponent {
   constructor(
     private sanitizer: DomSanitizer,
     private renderer2: Renderer2,
+    private ngZone: NgZone,
     @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit(): void {
-    this.initializeIFrame();
+    // Run outside of Angular zone to prevent change detection from running
+    this.ngZone.runOutsideAngular(() => {
+      this.initializeIFrame();
+    });
   }
 
   private initializeIFrame() {
