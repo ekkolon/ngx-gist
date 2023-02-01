@@ -46,6 +46,7 @@ export class AppModule {
 ```
 
 ```html
+<!-- app.component.html -->
 ... 
     <!-- Embedding the first (or only) file -->
     <div class="my-awesome-gist-container">
