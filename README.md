@@ -15,7 +15,7 @@ The iframe in which the gist embed is rendered, will automatically adjust it's s
 Install required peer dependencies:
 
 ```bash
-  npm install iframe-resizer
+  npm install iframe-resizer dompurify
 ```
 
 Install the library:
