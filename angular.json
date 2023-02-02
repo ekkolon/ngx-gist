@@ -63,6 +63,7 @@
               "projects/ngx-gist-playground/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/ngx-gist-playground/src/styles.scss"
             ],
             "scripts": []
@@ -126,6 +127,7 @@
               "projects/ngx-gist-playground/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/ngx-gist-playground/src/styles.scss"
             ],
             "scripts": []
