@@ -50,7 +50,6 @@ const materialModules = [
     BrowserAnimationsModule,
     NgxGistModule,
     AppRoutingModule,
-    NgScrollbarModule,
     HighlightModule,
     ...materialModules,
   ],
