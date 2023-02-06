@@ -57,7 +57,8 @@ export class NgxGistComponent {
    */
   @Input() set gistId(id: string) {
     this._gistId = id;
-    this._iframeId = `gist-${id}`;
+    const fileId = this.file ? `-file=${this.file}` : '';
+    this._iframeId = `gist-${id}${fileId}`;
   }
 
   /**

@@ -1,3 +1,7 @@
 {
-  "conventionalCommits.scopes": ["dev-deps", "deps"]
+  "conventionalCommits.scopes": [
+    "dev-deps",
+    "deps",
+    "playground"
+  ]
 }
