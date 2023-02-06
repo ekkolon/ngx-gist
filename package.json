@@ -20,7 +20,10 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "highlightjs-copy": "^1.0.3",
+    "highlightjs-line-numbers.js": "^2.8.0",
     "iframe-resizer": "^4.3.3",
+    "ngx-highlightjs": "^8.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

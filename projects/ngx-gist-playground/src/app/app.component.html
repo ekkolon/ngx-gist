@@ -1,0 +1,33 @@
+<div class="ngx-gist-playground-wrapper">
+  <nav id="nav">
+    <mat-toolbar>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon fontSet="material-symbols-outlined">menu</mat-icon>
+      </button>
+      <span class="title">NGX Gist Playground</span>
+
+      <div class="flex-fill"></div>
+
+      <div class="code-registry-list">
+        <div class="code-registry-list__item">
+          <a class="code-registry-link" [href]="GITHUB_REPO_URL" target="_blank">
+            <img src="assets/logos/github-mark.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </mat-toolbar>
+  </nav>
+  <mat-sidenav-container id="container">
+    <mat-sidenav id="sidenav" #sidenav mode="side" opened="true" fixedInViewport>
+      <mat-nav-list>
+        <a *ngFor="let link of routerLinks" [routerLink]="link.path" mat-list-item>
+          <mat-icon matListItemIcon fontSet="material-symbols-outlined">{{link.icon}}</mat-icon>
+          <span matListItemTitle>{{link.title}}</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content id="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
