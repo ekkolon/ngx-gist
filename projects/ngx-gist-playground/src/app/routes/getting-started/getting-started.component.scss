@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.ngx-gist-playground-page__content__item__code__block {
+  margin-bottom: 1.618rem;
+
+  pre {
+    margin: 0;
+  }
+
+  pre code {
+    border-radius: 4px;
+  }
+}
+
+.ngx-gist-playground-page__content__item__code__block:not(.single-line) {
+  margin-top: -16px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.ngx-gist-playground-page__content__item__code__block:first-of-type {
+  margin-top: 24px;
+}
+
+.ngx-gist-playground-page__content__item__code__block.single-line {
+  pre {
+    white-space: inherit;
+  }
+}
+
+.ngx-gist-playground-page__content__item__code__block:first-child:not(.single-line) {
+  margin-top: 24px;
+}
+
+.ngx-gist-playground-page__content__item__code__block:last-child {
+  margin-bottom: 0;
+}
