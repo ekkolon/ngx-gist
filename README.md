@@ -13,7 +13,7 @@ A simple and lightweight library for embedding GitHub Gists in your Angular appl
 - Auto-sized iframe
 - Runs outside NgZone
 
-## Prequisites
+## Requirements
 
 Make sure to have `iframe-resizer` installed. This library is needed for auto-resizing the iframe in which the gist is rendered.</p>
 
